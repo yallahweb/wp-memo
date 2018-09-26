@@ -1,0 +1,14 @@
+/* Reset for Beaver Builder
+--------------------------------------------- */
+.fl-builder-edit button,
+.fl-builder-edit input,
+.fl-builder-edit select,
+.fl-builder-edit textarea {
+	font-size: inherit;
+	text-transform: initial;
+}
+
+.fl-builder-edit button:hover,
+.fl-builder-edit button:focus {
+	background-color: inherit;
+}
