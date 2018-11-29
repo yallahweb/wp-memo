@@ -1,0 +1,14 @@
+//* Restrict edit to certain pages for editors
+
+add_filter( 'parse_query', 'exclude_pages_from_admin' );
+
+$user = wp_get_current_user();
+if ( in_array( 'editor', (array) $user->roles ) ) {
+
+    function exclude_pages_from_admin($query) {
+        global $pagenow,$post_type;
+        if (is_admin() && $pagenow=='edit.php' && $post_type =='page') {
+            $query->query_vars['post__not_in'] = array('5','26','28','30','32','34');
+        }
+    }
+}
